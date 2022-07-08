@@ -1,4 +1,4 @@
-const { Thought, User } = require("../models");
+import { Thought, User } from "../models";
 
 const thoughtController = {
   // get all Thoughts
@@ -119,7 +119,7 @@ const thoughtController = {
       .catch((err) => res.json(err));
   },
 
-  // delete reaction
+  // delete
   removeReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
@@ -131,4 +131,4 @@ const thoughtController = {
   },
 };
 
-module.exports = thoughtController;
+export default thoughtController;
